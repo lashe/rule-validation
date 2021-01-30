@@ -47,13 +47,6 @@ export class AppController {
         data: "null"
       }
 
-      // if (data.rule !== JSON) {
-      //   return response;
-      // }
-      // else if (data.data !== JSON) {
-      //   return response;
-      // }
-      
       if (data.rule !== null && typeof data.rule !== 'object') {
         throw new HttpException(response, HttpStatus.BAD_REQUEST);
       }
