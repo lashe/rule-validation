@@ -34,8 +34,6 @@ export class AppService {
         const data = {
             field: req.data[dataField]
         }
-        console.log(data.field);
-
         const response1 = {
             message: `field ${dataField} successfully validated.`,
             status: "success",
@@ -89,5 +87,6 @@ export class AppService {
             }
             throw new HttpException(response2, HttpStatus.BAD_REQUEST);
         }
+        throw new HttpException(response2, HttpStatus.BAD_REQUEST);
     }
 }
