@@ -82,7 +82,10 @@ export class AppService {
             }
             throw new HttpException(response2, HttpStatus.BAD_REQUEST);
         } else if (rule.condition === 'contains') {
-            if (data.field.includes(rule.condition_value) === true) {
+          if (typeof data.field === 'number'){
+            throw new HttpException(response2, HttpStatus.BAD_REQUEST);
+          }
+           else if (data.field.includes(rule.condition_value) === true) {
                 return response1;
             }
             throw new HttpException(response2, HttpStatus.BAD_REQUEST);
